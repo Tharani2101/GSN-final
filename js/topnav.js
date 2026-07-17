@@ -4,7 +4,7 @@
 
   const current = mount.dataset.current || "";
   const inPages = mount.dataset.base === "pages";
-  const homeHref = inPages ? "../GSN Redesign.html" : "GSN Redesign.html";
+  const homeHref = inPages ? "../index.html" : "index.html";
   const prefix = inPages ? "" : "pages/";
 
   // Main nav links matching the GSN navbar (second image)
