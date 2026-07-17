@@ -1,0 +1,319 @@
+/* GSN site-wide top navigation — dark bar matching main dashboard */
+.topnav-bar {
+  background: #0c1222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.topnav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  gap: 8px;
+}
+
+/* GSN Logo — left side, links to home */
+.topnav-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.topnav-logo:hover {
+  opacity: 0.85;
+}
+
+.topnav-logo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0d0d0d;
+  border: 2px solid #b8952a;
+  border-radius: 6px;
+  padding: 5px 14px 4px;
+  min-width: 72px;
+  gap: 1px;
+}
+
+.topnav-logo-gsn {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #c9a84c;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.topnav-logo-sub {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 6.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #b8952a;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+
+
+/* Action buttons — GET INVITED & LOGIN */
+.topnav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.topnav-btn-invite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
+  background: #b8952a;
+  color: #fff;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #b8952a;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.topnav-btn-invite:hover {
+  background: #a07d20;
+  border-color: #a07d20;
+}
+
+.topnav-btn-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
+  background: transparent;
+  color: #fff;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.topnav-btn-login:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.topnav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 0;
+}
+
+.topnav-links a,
+.topnav-dropdown > button {
+  color: #fff;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px 18px;
+  white-space: nowrap;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.topnav-links a:hover,
+.topnav-dropdown > button:hover,
+.topnav-links a.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.topnav-dropdown {
+  position: relative;
+}
+
+.topnav-dropdown .chevron {
+  font-size: 10px;
+  opacity: 0.85;
+  transition: transform 0.2s ease;
+}
+
+.topnav-dropdown.open .chevron {
+  transform: rotate(180deg);
+}
+
+.topnav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% - 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 680px;
+  background: #141c30;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.topnav-dropdown.open .topnav-dropdown-menu {
+  display: block;
+}
+
+.megamenu-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.megamenu-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.megamenu-title {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #c9a84c;
+  border-bottom: 2px solid rgba(201, 168, 76, 0.15);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  letter-spacing: 0.1em;
+  text-align: left;
+}
+
+.megamenu-col a {
+  display: block !important;
+  padding: 8px 0 !important;
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none !important;
+  text-align: left !important;
+  background: none !important;
+  white-space: normal !important;
+}
+
+.megamenu-col a:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
+  background: none !important;
+}
+
+.topnav-toggle {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 1100px) {
+  .topnav-inner {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding: 10px 16px;
+  }
+
+  .topnav-toggle {
+    display: block;
+  }
+
+  .topnav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 0 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 4px;
+  }
+
+  .topnav-links.open {
+    display: flex;
+  }
+
+  .topnav-links a,
+  .topnav-dropdown > button {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 8px;
+  }
+
+  .topnav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin: 8px 0 8px 8px;
+    width: auto;
+    padding: 16px;
+  }
+
+  .megamenu-cols {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .megamenu-title {
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    font-size: 10px;
+  }
+
+  .megamenu-col a {
+    padding: 6px 0 !important;
+  }
+
+  .topnav-actions {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 8px 0 4px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .topnav-btn-invite,
+  .topnav-btn-login {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+  }
+}
